@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cup Detector</title>
+    <style>
+        .error { color: red; }
+        .upload-box {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cup Detection System</h1>
+    
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    
+    <form method="post" enctype="multipart/form-data">
+        <div class="upload-box">
+            <input type="file" name="file" id="file" required>
+            <p>Upload an image containing cups/mugs</p>
+        </div>
+        <button type="submit">Detect Cups</button>
+    </form>
+</body>
+</html>
